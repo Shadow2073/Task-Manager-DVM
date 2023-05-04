@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/black"
+    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Task Details"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="36sp"
         android:gravity="center"
         android:fontFamily="sans-serif"/>
@@ -29,17 +29,12 @@
         android:textColor="@color/white"
         />
 
-    <EditText
-        android:id="@+id/create_priority"
-        android:layout_width="match_parent"
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:hint="Time"
-        android:padding="15dp"
-        android:background="@drawable/custom_edittetext"
-        android:textColorHint="#BFBBBB"
-        android:textColor="@color/white"
-        />
+        android:layout_centerHorizontal="true"
+        android:timePickerMode="spinner"/>
 
     <Button
         android:id="@+id/save_button"

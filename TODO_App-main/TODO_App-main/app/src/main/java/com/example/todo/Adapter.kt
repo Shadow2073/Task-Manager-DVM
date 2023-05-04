@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.view.view.*
 class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.viewHolder>() {
     class viewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var title = itemView.title
-        var priority = itemView.priority
+        var time = itemView.priority
         var layout = itemView.mylayout
     }
 
@@ -24,11 +24,11 @@ class Adapter(var data: List<CardInfo>) : RecyclerView.Adapter<Adapter.viewHolde
         when (data[position].priority.toLowerCase()) {
             "high" -> holder.layout.setBackgroundColor(Color.parseColor("#F05454"))
             "medium" -> holder.layout.setBackgroundColor(Color.parseColor("#EDC988"))
-            else -> holder.layout.setBackgroundColor(Color.parseColor("#00917C"))
+            else -> holder.layout.setBackgroundColor(Color.parseColor("#FFBB86FC"))
         }
 
         holder.title.text = data[position].title
-        holder.priority.text = data[position].priority
+        holder.time.text = data[position].priority
         holder.itemView.setOnClickListener{
             val intent= Intent(holder.itemView.context,UpdateCard::class.java)
             intent.putExtra("id",position)

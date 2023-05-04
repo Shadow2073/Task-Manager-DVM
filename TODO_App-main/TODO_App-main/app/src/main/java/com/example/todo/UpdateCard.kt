@@ -3,8 +3,6 @@ package com.example.todo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.room.Room
 import kotlinx.android.synthetic.main.activity_update_card.*
 import kotlinx.coroutines.GlobalScope
@@ -23,7 +21,7 @@ class UpdateCard : AppCompatActivity() {
             val title = DataObject.getData(pos).title
             val priority = DataObject.getData(pos).priority
             create_title.setText(title)
-            create_priority.setText(priority)
+            timePicker.setText(priority)
 
             delete_button.setOnClickListener {
                 DataObject.deleteData(pos)
@@ -32,7 +30,7 @@ class UpdateCard : AppCompatActivity() {
                         Entity(
                             pos + 1,
                             create_title.text.toString(),
-                            create_priority.text.toString()
+                            timePicker.text.toString()
                         )
                     )
                 }
@@ -43,13 +41,13 @@ class UpdateCard : AppCompatActivity() {
                 DataObject.updateData(
                     pos,
                     create_title.text.toString(),
-                    create_priority.text.toString()
+                    timePicker.text.toString()
                 )
                 GlobalScope.launch {
                     database.dao().updateTask(
                         Entity(
                             pos + 1, create_title.text.toString(),
-                            create_priority.text.toString()
+                            timePicker.text.toString()
                         )
                     )
                 }
